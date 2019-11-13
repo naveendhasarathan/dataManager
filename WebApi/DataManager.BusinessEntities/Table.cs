@@ -2,7 +2,8 @@
 
 namespace DataManager.BusinessEntities
 {
-    public class Class1
+    public class Table
     {
+        public string Name { get; set; }
     }
 }

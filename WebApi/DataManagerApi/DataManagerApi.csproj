@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DataManagerController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -155,7 +156,7 @@
       <Name>DataManager.BusinessEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataManager.BusinessLogic\DataManager.BusinessLogic.csproj">
-      <Project>{78a6beba-a560-4755-8e48-59a6cb56dedb}</Project>
+      <Project>{d5831fca-926f-41f4-98a0-4e3e07a3aed0}</Project>
       <Name>DataManager.BusinessLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataManager.Common\DataManager.Common.csproj">

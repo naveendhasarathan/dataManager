@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataManager.BusinessEntities\DataManager.BusinessEntities.csproj" />
-    <ProjectReference Include="..\DataManager.Common\DataManager.Common.csproj" />
+    <ProjectReference Include="..\DataManager.ResourceAccess\DataManager.ResourceAccess.csproj" />
   </ItemGroup>
 
 </Project>
