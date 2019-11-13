@@ -59,6 +59,11 @@ const useStyles = makeStyles(theme => ({
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
     },
+    dvBox: {
+        padding: "0 px !important",
+        background: 'green'
+
+    },
 }));
 
 export default function VerticalTabs() {
@@ -90,59 +95,55 @@ export default function VerticalTabs() {
 
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Paper className={classes.paper}>
-
-                        <FormGroup>
-                            <FormControlLabel
-                                control={<Switch checked={auth} onChange={handleChange1} aria-label="login switch" />}
-                                label={auth ? 'Logout' : 'Login'}
-                            />
-                        </FormGroup>
-                        <AppBar position="static">
-                            <Toolbar>
-                                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                                    <MenuIcon />
-                                </IconButton>
-                                <Typography variant="h6" className={classes.title}>
-                                    Photos
+                    <FormGroup>
+                        <FormControlLabel
+                            control={<Switch checked={auth} onChange={handleChange1} aria-label="login switch" />}
+                            label={auth ? 'Logout' : 'Login'}
+                        />
+                    </FormGroup>
+                    <AppBar position="static">
+                        <Toolbar>
+                            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                                <MenuIcon />
+                            </IconButton>
+                            <Typography variant="h6" className={classes.title}>
+                                Photos
           </Typography>
-                                {auth && (
-                                    <div>
-                                        <IconButton
-                                            aria-label="account of current user"
-                                            aria-controls="menu-appbar"
-                                            aria-haspopup="true"
-                                            onClick={handleMenu}
-                                            color="inherit"
-                                        >
-                                            <AccountCircle />
-                                        </IconButton>
-                                        <Menu
-                                            id="menu-appbar"
-                                            anchorEl={anchorEl}
-                                            anchorOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'right',
-                                            }}
-                                            keepMounted
-                                            transformOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'right',
-                                            }}
-                                            open={open}
-                                            onClose={handleClose}
-                                        >
-                                            <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                            <MenuItem onClick={handleClose}>My account</MenuItem>
-                                        </Menu>
-                                    </div>
-                                )}
-                            </Toolbar>
-                        </AppBar>
-                    </Paper>
+                            {auth && (
+                                <div>
+                                    <IconButton
+                                        aria-label="account of current user"
+                                        aria-controls="menu-appbar"
+                                        aria-haspopup="true"
+                                        onClick={handleMenu}
+                                        color="inherit"
+                                    >
+                                        <AccountCircle />
+                                    </IconButton>
+                                    <Menu
+                                        id="menu-appbar"
+                                        anchorEl={anchorEl}
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        keepMounted
+                                        transformOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        open={open}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                        <MenuItem onClick={handleClose}>My account</MenuItem>
+                                    </Menu>
+                                </div>
+                            )}
+                        </Toolbar>
+                    </AppBar>
                 </Grid>
-                <Grid item xs={3}>
-
+                <Grid item xs={2}>
                     <Tabs
                         orientation="vertical"
                         variant="scrollable"
@@ -150,21 +151,23 @@ export default function VerticalTabs() {
                         onChange={handleChange}
                         aria-label="Vertical tabs example"
                         className={classes.tabs}>
-                        <Tab label="Item One" {...a11yProps(0)} />
-                        <Tab label="Item Two" {...a11yProps(1)} />
-                        <Tab label="Item Three" {...a11yProps(2)} />
-                    </Tabs>   </Grid>
-                <TabPanel value={value} index={0}>
-                    <Dataview />
-                </TabPanel>
+                        <Tab label="Tables" {...a11yProps(0)} />
+                        <Tab label="Views" {...a11yProps(1)} />
+                        <Tab label="Stored Procs" {...a11yProps(2)} />
+                    </Tabs>
+                </Grid>
+                <Grid item xs={9}>
+                    <TabPanel value={value} index={0}>
+                        <Dataview />
+                    </TabPanel>
 
-                <TabPanel value={value} index={1}>
-                    Item Two
+                    <TabPanel value={value} index={1}>
+                        Item Two
       </TabPanel>
-                <TabPanel value={value} index={2}>
-                    Item Three
+                    <TabPanel value={value} index={2}>
+                        Item Three
       </TabPanel>
-
+                </Grid>
             </Grid>
 
 

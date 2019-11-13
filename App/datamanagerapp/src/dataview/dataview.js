@@ -11,7 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles({
@@ -21,13 +21,19 @@ const useStyles = makeStyles({
     },
     table: {
         minWidth: 650,
+        width: "100%"
     },
     formControl: {
-       // margin: this.spacing(1),
+        // margin: this.spacing(1),
         minWidth: 120,
     },
     selectEmpty: {
         //marginTop: this.spacing(2),
+    },
+    dvBox: {
+        padding: "-10 px !important",
+
+
     },
 });
 
@@ -47,22 +53,21 @@ export default function SimpleTable() {
     const classes = useStyles();
 
 
-        const [age, setAge] = React.useState('');
+    const [age, setAge] = React.useState('');
 
-        const inputLabel = React.useRef(null);
-        const [labelWidth, setLabelWidth] = React.useState(0);
-        React.useEffect(() => {
-            //setLabelWidth(inputLabel.current.offsetWidth);
-        }, []);
+    const inputLabel = React.useRef(null);
+    const [labelWidth, setLabelWidth] = React.useState(0);
+    React.useEffect(() => {
+        //setLabelWidth(inputLabel.current.offsetWidth);
+    }, []);
 
-        const handleChange = event => {
-            setAge(event.target.value);
-        };
+    const handleChange = event => {
+        setAge(event.target.value);
+    };
 
 
     return (
-        <Paper className={classes.root}>
-
+        <div>
             <FormControl className={classes.formControl}>
                 <InputLabel id="demo-simple-select-autowidth-label">Tables List</InputLabel>
                 <Select
@@ -79,32 +84,34 @@ export default function SimpleTable() {
                     <MenuItem value={30}>tblRoles</MenuItem>
                 </Select>
             </FormControl>
-            <br />
 
-            <Table className={classes.table} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Table Name</TableCell>
-                        <TableCell align="right">Column Name</TableCell>
-                        <TableCell align="right">Data Type</TableCell>
-                        <TableCell align="right">CharacterMaxLength</TableCell>
-                        <TableCell align="right">Notes</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map(row => (
-                        <TableRow key={row.name}>
-                            <TableCell component="th" scope="row">
-                                {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
-                            <TableCell align="right">{row.protein}</TableCell>
+            <Paper className={classes.root}>
+                <Table className={classes.table} aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Table Name</TableCell>
+                            <TableCell align="right">Column Name</TableCell>
+                            <TableCell align="right">Data Type</TableCell>
+                            <TableCell align="right">CharacterMaxLength</TableCell>
+                            <TableCell align="right">Notes</TableCell>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </Paper>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map(row => (
+                            <TableRow key={row.name}>
+                                <TableCell component="th" scope="row">
+                                    {row.name}
+                                </TableCell>
+                                <TableCell align="right">{row.calories}</TableCell>
+                                <TableCell align="right">{row.fat}</TableCell>
+                                <TableCell align="right">{row.carbs}</TableCell>
+                                <TableCell align="right">{row.protein}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </Paper>
+        </div>
+
     );
 }
