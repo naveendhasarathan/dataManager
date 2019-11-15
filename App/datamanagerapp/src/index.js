@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 //import Dataview from './public/dataview/dataview';
 
-import Dataview from './dataview/dataview';
+import Dataview from './dataview/tablepage';
 import Basepage from './Base/basepage';
 
 import * as serviceWorker from './serviceWorker';

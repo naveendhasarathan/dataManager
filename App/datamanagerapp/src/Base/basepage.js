@@ -5,7 +5,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Dataview from '../dataview/dataview';
+import TablePage from '../dataview/tablepage';
+import StoredProcpage from '../dataview/storedprocpage';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -90,6 +91,10 @@ export default function VerticalTabs() {
         setAnchorEl(null);
     };
 
+    const handleRich = () => {
+        alert('hey');
+    };
+
     return (
         <div className={classes.root}>
 
@@ -152,17 +157,17 @@ export default function VerticalTabs() {
                         aria-label="Vertical tabs example"
                         className={classes.tabs}>
                         <Tab label="Tables" {...a11yProps(0)} />
-                        <Tab label="Views" {...a11yProps(1)} />
-                        <Tab label="Stored Procs" {...a11yProps(2)} />
+                        <Tab label="Stored Procs" {...a11yProps(1)} />
+                        <Tab label="Views" {...a11yProps(2)} />
                     </Tabs>
                 </Grid>
                 <Grid item xs={9}>
                     <TabPanel value={value} index={0}>
-                        <Dataview />
+                        <TablePage />
                     </TabPanel>
 
                     <TabPanel value={value} index={1}>
-                        Item Two
+                        <StoredProcpage click={handleRich} />
       </TabPanel>
                     <TabPanel value={value} index={2}>
                         Item Three
