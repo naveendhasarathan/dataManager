@@ -15,11 +15,13 @@ namespace DataManager.Common
     public static class Db
     {
 
-        public static IDbConnection Connection()
+        public static IDbConnection Connection(string con=null)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString;
+            string connectionString = con ?? ConfigurationManager.ConnectionStrings["dbConn"].ConnectionString;
             return (IDbConnection)new SqlConnection(connectionString);
         }
+
+       
 
         //public static bool CheckDBAvailability()
         //{
@@ -120,5 +122,14 @@ namespace DataManager.Common
             return (List<T>)Connection().Query<T>(dynQuery, dynParam, commandType: CommandType.Text);
         }
 
+        public static List<T> FetchSP<T>(string dynQuery, DynamicParameters dynParam)
+        {
+            return (List<T>)Connection().Query<T>(dynQuery, dynParam, commandType: CommandType.StoredProcedure);
+        }
+
+        public static List<T> FetchByConnection<T>(string connectionstring, string query, DynamicParameters dynParams)
+        {
+            return (List<T>)Connection(connectionstring).Query<T>(query, dynParams, commandType: CommandType.Text);
+        }
     }
 }
