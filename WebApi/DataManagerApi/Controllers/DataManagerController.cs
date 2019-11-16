@@ -18,5 +18,15 @@ namespace DataManagerApi.Controllers
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, resultData);
             return response;
         }
+
+
+        [HttpGet]
+        [Route("DM/Schema")]
+        public HttpResponseMessage GetSchemaDetails()
+        {
+            var resultData = new DatamanagerBpl().GetSchemadetails();
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, resultData);
+            return response;
+        }
     }
 }

@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 //import Dataview from './public/dataview/dataview';
-
-import Dataview from './dataview/tablepage';
+//import Dataview from './dataview/tablepage';
 import Basepage from './Base/basepage';
 
 import * as serviceWorker from './serviceWorker';

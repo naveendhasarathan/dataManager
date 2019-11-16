@@ -17,9 +17,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+//import Paper from '@material-ui/core/Paper';
+//import Container from '@material-ui/core/Container';
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -30,8 +31,7 @@ function TabPanel(props) {
             hidden={value !== index}
             id={`vertical-tabpanel-${index}`}
             aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
+            {...other}>
             <Box p={3}>{children}</Box>
         </Typography>
     );

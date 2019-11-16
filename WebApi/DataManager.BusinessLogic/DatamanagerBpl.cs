@@ -11,5 +11,10 @@ namespace DataManager.BusinessLogic
         {
             return new DataManagerRal().GetTables();
         }
+
+        public List<DbSchemaDetails> GetSchemadetails()
+        {
+            return new DataManagerRal().GetSchemadetails();
+        }
     }
 }
