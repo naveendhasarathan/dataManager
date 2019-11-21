@@ -4,18 +4,7 @@
 
 *.dll
 *.pdb
-/WebApi/DataManager.BusinessEntities/obj/Debug/netstandard2.0
-/WebApi/DataManager.BusinessEntities/obj
 /.vs
-/WebApi/DataManager.BusinessEntities/bin/Debug/netstandard2.0
-/WebApi/DataManager.BusinessLogic/bin/Debug/netstandard2.0
-/WebApi/DataManager.BusinessLogic/obj
-/WebApi/DataManager.Common/bin/Debug/netstandard2.0
-/WebApi/DataManager.Common/obj
-/WebApi/DataManager.ResourceAccess/obj
-/WebApi/DataManager.ResourceAccess/bin/Debug/netstandard2.0
 /WebApi/DataManagerApi/.vs/DataManagerApi/v16
-/WebApi/DataManagerApi/bin
-/WebApi/DataManagerApi/obj
 /WebApi/DataManagerApi/Web.Release.config
 /WebApi/DataManagerApi/Web.Debug.config
